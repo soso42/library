@@ -2,20 +2,26 @@ package com.solvd.entity;
 
 import com.solvd.util.BetterArray;
 
-public class Library {
+public class Library extends BaseEntity {
 
-    private final long id;
     private final BetterArray<Librarian> librarians = new BetterArray<>();
     private final BetterArray<Member> members = new BetterArray<>();
     private final BetterArray<BookCopy> bookCopies = new BetterArray<>();
 
-
-    public Library(long id) {
-        this.id = id;
+    public Library(Long id) {
+        super(id);
     }
 
-    public long getId() {
-        return id;
+    public BetterArray<Librarian> getLibrarians() {
+        return librarians;
+    }
+
+    public BetterArray<Member> getMembers() {
+        return members;
+    }
+
+    public BetterArray<BookCopy> getBookCopies() {
+        return bookCopies;
     }
 
     public void addLibrarian(Librarian librarian) {

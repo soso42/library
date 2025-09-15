@@ -2,7 +2,7 @@ package com.solvd.entity;
 
 import java.time.Year;
 
-public class Book {
+public class Book extends BaseEntity {
 
     private String isbn;
     private String title;

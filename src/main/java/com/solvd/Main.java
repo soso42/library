@@ -3,6 +3,7 @@ package com.solvd;
 import com.solvd.entity.BookCopy;
 import com.solvd.entity.Library;
 import com.solvd.entity.Member;
+import com.solvd.service.LibraryService;
 import com.solvd.service.LoanService;
 import com.solvd.util.DummyData;
 
@@ -18,6 +19,9 @@ public class Main {
 
         loanService.loanBook(member, bookCopy);
 
+        // Polymorphism
+        LibraryService libraryService = new LibraryService(library);
+        libraryService.startWorkDay();
     }
 
 }

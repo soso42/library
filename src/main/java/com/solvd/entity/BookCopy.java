@@ -1,29 +1,20 @@
 package com.solvd.entity;
 
-public class BookCopy {
+public class BookCopy extends BaseEntity {
 
-    private Long id;
     private Book book;
     private Shelf shelf;
 
     public BookCopy() {}
 
     public BookCopy(Long id) {
-        this.id = id;
+        super(id);
     }
 
     public BookCopy(Long id, Book book, Shelf shelf) {
-        this.id = id;
+        super(id);
         this.book = book;
         this.shelf = shelf;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public Book getBook() {

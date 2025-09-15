@@ -1,29 +1,21 @@
 package com.solvd.entity;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
-public class Loan {
+public class Loan extends BaseEntity {
 
-    private long id;
     private BookCopy bookCopy;
     private LocalDate loanDate;
     private LocalDate dueDate;
 
     public Loan() {}
 
-    public Loan(long id, BookCopy bookCopy, LocalDate loanDate, LocalDate dueDate) {
-        this.id = id;
+    public Loan(Long id, BookCopy bookCopy, LocalDate loanDate, LocalDate dueDate) {
+        super(id);
         this.bookCopy = bookCopy;
         this.loanDate = loanDate;
         this.dueDate = dueDate;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public BookCopy getBookCopy() {
@@ -48,5 +40,28 @@ public class Loan {
 
     public void setDueDate(LocalDate dueDate) {
         this.dueDate = dueDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Loan{" +
+                "id=" + getId() +
+                ", bookCopy=" + (bookCopy != null ? bookCopy.getId() : null) +
+                ", loanDate=" + loanDate +
+                ", dueDate=" + dueDate +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Loan)) return false;
+        Loan loan = (Loan) o;
+        return Objects.equals(getId(), loan.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 }

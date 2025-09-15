@@ -2,59 +2,17 @@ package com.solvd.entity;
 
 import com.solvd.util.BetterArray;
 
-import java.time.LocalDate;
+import java.util.Objects;
 
-public class Member {
 
-    private Long id;
-    private String firstName;
-    private String lastName;
-    private LocalDate dateOfBirth;
+public class Member extends LibraryParticipant{
+
     private BetterArray<Loan> loans = new BetterArray<>();
 
     public Member() {}
 
-    public Member(Long id) {
-        this.id = id;
-    }
-
-    public Member(Long id, String firstName, String lastName, LocalDate dateOfBirth) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public LocalDate getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(LocalDate dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public Member(Long id, String firstName, String lastName, Long libraryAccessCardNumber) {
+        super(id, firstName, lastName, libraryAccessCardNumber);
     }
 
     public void addLoan(Loan loan) {
@@ -64,4 +22,34 @@ public class Member {
     public void removeLoan(int index) {
         loans.remove(index);
     }
+
+
+    @Override
+    public void performAction() {
+        System.out.println("Member: sitting and reading a book");
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Member{");
+        sb.append("FistName='").append(getFirstName());
+        sb.append(", LastName='").append(getLastName());
+        sb.append('}');
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Member member)) return false;
+        return Objects.equals(getId(), member.getId()) &&
+                Objects.equals(getFirstName(), member.getFirstName()) &&
+                Objects.equals(getLastName(), member.getLastName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getFirstName(), getLastName());
+    }
+
 }

@@ -8,13 +8,13 @@ public class DummyData {
 
     public static Library initLibraryData() {
 
-        Library library = new Library(1);
+        Library library = new Library(1L);
 
         Librarian librarian = new Librarian();
         library.addLibrarian(librarian);
 
         Member member = new Member();
-        member.setId(1);
+        member.setId(1L);
         library.addMember(member);
 
         Author author = new Author(1L, "Eric", "Freeman");
