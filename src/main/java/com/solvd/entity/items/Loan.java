@@ -1,4 +1,6 @@
-package com.solvd.entity;
+package com.solvd.entity.items;
+
+import com.solvd.entity.common.BaseEntity;
 
 import java.time.LocalDate;
 import java.util.Objects;

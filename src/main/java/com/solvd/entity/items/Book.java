@@ -1,4 +1,7 @@
-package com.solvd.entity;
+package com.solvd.entity.items;
+
+import com.solvd.entity.common.BaseEntity;
+import com.solvd.entity.people.Author;
 
 import java.time.Year;
 

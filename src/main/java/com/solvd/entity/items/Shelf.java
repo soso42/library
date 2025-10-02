@@ -1,4 +1,6 @@
-package com.solvd.entity;
+package com.solvd.entity.items;
+
+import com.solvd.entity.common.BaseEntity;
 
 public class Shelf extends BaseEntity {
 

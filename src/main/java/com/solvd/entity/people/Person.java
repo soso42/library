@@ -1,4 +1,6 @@
-package com.solvd.entity;
+package com.solvd.entity.people;
+
+import com.solvd.entity.common.BaseEntity;
 
 public abstract class Person extends BaseEntity {
 

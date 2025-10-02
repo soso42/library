@@ -1,5 +1,7 @@
-package com.solvd.entity;
+package com.solvd.entity.people;
 
+import com.solvd.entity.items.AccessCard;
+import com.solvd.entity.items.Loan;
 import com.solvd.util.BetterArray;
 
 import java.util.Objects;
@@ -7,12 +9,15 @@ import java.util.Objects;
 
 public class Member extends LibraryParticipant{
 
-    private BetterArray<Loan> loans = new BetterArray<>();
+    private final BetterArray<Loan> loans;
 
-    public Member() {}
+    public Member() {
+        this.loans = new BetterArray<>();
+    }
 
-    public Member(Long id, String firstName, String lastName, Long libraryAccessCardNumber) {
-        super(id, firstName, lastName, libraryAccessCardNumber);
+    public Member(Long id, String firstName, String lastName, AccessCard accessCard) {
+        super(id, firstName, lastName, accessCard);
+        this.loans = new BetterArray<>();
     }
 
     public void addLoan(Loan loan) {

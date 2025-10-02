@@ -1,12 +1,14 @@
-package com.solvd.entity;
+package com.solvd.entity.items;
 
-public class Category extends BaseEntity {
+import com.solvd.entity.common.BaseEntity;
+
+public class Publisher extends BaseEntity {
 
     private String name;
 
-    public Category() {}
+    public Publisher() {}
 
-    public Category(Long id, String name) {
+    public Publisher(Long id, String name) {
         super(id);
         this.name = name;
     }

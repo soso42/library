@@ -1,4 +1,4 @@
-package com.solvd.entity;
+package com.solvd.entity.common;
 
 public abstract class BaseEntity {
 

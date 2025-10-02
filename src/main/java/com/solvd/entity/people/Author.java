@@ -1,4 +1,4 @@
-package com.solvd.entity;
+package com.solvd.entity.people;
 
 public class Author extends Person {
 

@@ -1,4 +1,6 @@
-package com.solvd.entity;
+package com.solvd.entity.people;
+
+import com.solvd.entity.items.AccessCard;
 
 import java.util.Objects;
 
@@ -6,8 +8,8 @@ public class Librarian extends LibraryParticipant {
 
     public Librarian() {}
 
-    public Librarian(Long id, String firstName, String lastName, Long libraryAccessCardNumber) {
-        super(id, firstName, lastName, libraryAccessCardNumber);
+    public Librarian(Long id, String firstName, String lastName, AccessCard accessCard) {
+        super(id, firstName, lastName, accessCard);
     }
 
     @Override

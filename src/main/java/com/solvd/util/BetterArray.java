@@ -1,5 +1,8 @@
 package com.solvd.util;
 
+import java.util.Arrays;
+import java.util.stream.Stream;
+
 public class BetterArray<T> {
 
     private Object[] data;
@@ -48,6 +51,11 @@ public class BetterArray<T> {
         if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
         }
+    }
+
+    public Stream<T> stream() {
+        return Arrays.stream(data, 0, size)
+                .map(e -> (T) e);
     }
 
 }

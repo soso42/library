@@ -1,6 +1,10 @@
-package com.solvd.entity;
+package com.solvd.entity.items;
 
-public class BookCopy extends BaseEntity {
+import com.solvd.entity.Borrowable;
+import com.solvd.entity.Printable;
+import com.solvd.entity.common.BaseEntity;
+
+public class BookCopy extends BaseEntity implements Borrowable, Printable {
 
     private Book book;
     private Shelf shelf;
