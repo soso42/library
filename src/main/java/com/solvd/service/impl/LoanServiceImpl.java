@@ -10,6 +10,7 @@ import java.time.LocalDate;
 
 public class LoanServiceImpl implements LoanService {
 
+    private static LoanService instance;
     private static int maxBorrowDays;
 
     static {
@@ -37,5 +38,12 @@ public class LoanServiceImpl implements LoanService {
 
     public static void setMaxBorrowDays(int newMaxBorrowDays) {
         maxBorrowDays = newMaxBorrowDays;
+    }
+
+    public static LoanService getInstance() {
+        if (instance == null) {
+            instance = new LoanServiceImpl();
+        }
+        return instance;
     }
 }

@@ -36,4 +36,13 @@ public class BookCopy extends BaseEntity implements Borrowable, Printable {
     public void setShelf(Shelf shelf) {
         this.shelf = shelf;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("BookCopy {");
+        sb.append(" id= ").append(this.getId());
+        sb.append(" book=").append(book.getTitle());
+        sb.append(" }");
+        return sb.toString();
+    }
 }
