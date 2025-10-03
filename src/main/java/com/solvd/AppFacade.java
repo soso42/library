@@ -30,18 +30,23 @@ public class AppFacade {
 
         restoreAppState();
 
-        while (true) {
-            AccessLevel accessLevel = authService.getAccessLevel();
-            menus.get(accessLevel).run();
+        try {
+            while (true) {
+                AccessLevel accessLevel = authService.getAccessLevel();
+                menus.get(accessLevel).run();
 
-            String input = scanner.nextLine();
+                String input = scanner.nextLine();
 
-            try {
-                Command command = commandFactory.getCommand(input);
-                command.execute();
-            } catch (UnknownCommandException e) {
-                System.out.println("\n!!!!!     UNKNOWN COMMAND. Please try again     !!!!!");
+                try {
+                    Command command = commandFactory.getCommand(input);
+                    command.execute();
+                } catch (UnknownCommandException e) {
+                    System.out.println("\n!!!!!     UNKNOWN COMMAND. Please try again     !!!!!");
+                }
             }
+        } finally {
+            scanner.close();
+            System.out.println("Application shutting down. Resources released.");
         }
     }
 

@@ -20,7 +20,7 @@ public class AppStateServiceImpl implements AppStateService {
 
     @Override
     public void close() throws Exception {
-
+        System.out.println("Data imported successfully.");
     }
 
     @Override
